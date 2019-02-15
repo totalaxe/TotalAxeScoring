@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Total Axe Scoring</string>
+    <string name="team_a">Player 1</string>
+    <string name="team_b">Player 2</string>
+    <string name="team_a_score">0</string>
+    <string name="team_b_score">0</string>
+    <string name="reset_button">Reset</string>
+</resources>

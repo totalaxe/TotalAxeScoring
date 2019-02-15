@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/team_a_name"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:cursorVisible="false"
+                android:fontFamily="sans-serif"
+                android:gravity="center_horizontal"
+                android:maxLines="1"
+                android:text="@string/team_a"
+                android:textColor="#616161"
+                android:textSize="14sp"
+                />
+
+            <EditText
+                android:id="@+id/team_b_name"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:cursorVisible="false"
+                android:fontFamily="sans-serif"
+                android:gravity="center_horizontal"
+                android:text="@string/team_b"
+                android:textColor="#616161"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/team_a_score"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="2dp"
+                    android:layout_toEndOf="@id/add_1_to_a"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="90dp"
+                    android:text="0"
+                    android:textColor="#FF0000"
+                    android:textSize="130sp" />
+
+
+                <Button
+                    android:id="@+id/sub_one_from_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="2dp"
+                    android:onClick="subA"
+                    android:tag="1"
+                    android:text="-1"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/center_a"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="0dp"
+                    android:layout_toEndOf="@id/sub_one_from_a"
+                    android:text=""
+                    android:textSize="0sp" />
+                <!--android:layout_centerHorizontal="true"-->
+
+                <Button
+                    android:id="@+id/add_1_to_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="2dp"
+                    android:layout_toEndOf="@id/center_a"
+                    android:onClick="addA"
+                    android:tag="1"
+                    android:text="+1"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/sub_2_from_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sub_one_from_a"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="2dp"
+                    android:onClick="subA"
+                    android:tag="2"
+                    android:text="-2"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/center_a_2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="0dp"
+                    android:layout_toEndOf="@id/sub_2_from_a"
+                    android:text=""
+                    android:textSize="0sp" />
+                <!--android:layout_centerHorizontal="true"-->
+
+                <Button
+                    android:id="@+id/add_2_to_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_1_to_a"
+                    android:layout_margin="2dp"
+                    android:layout_toEndOf="@id/center_a_2"
+                    android:onClick="addA"
+                    android:tag="2"
+                    android:text="+2"
+                    android:textSize="14sp" />
+
+
+                <Button
+                    android:id="@+id/sub_3_from_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sub_2_from_a"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="2dp"
+                    android:onClick="subA"
+                    android:tag="3"
+                    android:text="-3"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/center_a_3"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_below="@id/center_a_2"
+                    android:layout_margin="0dp"
+                    android:layout_toEndOf="@id/sub_3_from_a"
+                    android:text=""
+                    android:textSize="0sp" />
+                <!--android:layout_centerHorizontal="true"-->
+
+                <Button
+                    android:id="@+id/add_3_to_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_2_to_a"
+                    android:layout_margin="2dp"
+                    android:layout_toEndOf="@id/center_a_3"
+                    android:onClick="addA"
+                    android:tag="3"
+                    android:text="+3"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/sub_4_from_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sub_3_from_a"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="2dp"
+                    android:onClick="subA"
+                    android:tag="4"
+                    android:text="-4"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/center_a_4"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_below="@id/center_a_3"
+                    android:layout_margin="0dp"
+                    android:layout_toEndOf="@id/sub_4_from_a"
+                    android:text=""
+                    android:textSize="0sp" />
+                <!--android:layout_centerHorizontal="true"-->
+
+                <Button
+                    android:id="@+id/add_4_to_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_3_to_a"
+                    android:layout_margin="2dp"
+                    android:layout_toEndOf="@id/center_a_4"
+                    android:onClick="addA"
+                    android:tag="4"
+                    android:text="+4"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/sub_5_from_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sub_4_from_a"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="2dp"
+                    android:onClick="subA"
+                    android:tag="5"
+                    android:text="-5"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/center_a_5"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_below="@id/center_a_4"
+                    android:layout_margin="0dp"
+                    android:layout_toEndOf="@id/sub_5_from_a"
+                    android:text=""
+                    android:textSize="0sp" />
+                <!--android:layout_centerHorizontal="true"-->
+
+                <Button
+                    android:id="@+id/add_5_to_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_4_to_a"
+                    android:layout_margin="2dp"
+                    android:layout_toEndOf="@id/center_a_5"
+                    android:onClick="addA"
+                    android:tag="5"
+                    android:text="+5"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/sub_6_from_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sub_5_from_a"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="2dp"
+                    android:onClick="subA"
+                    android:tag="6"
+                    android:text="-6"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/center_a_6"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_below="@id/center_a_5"
+                    android:layout_margin="0dp"
+                    android:layout_toEndOf="@id/sub_6_from_a"
+                    android:text=""
+                    android:textSize="0sp" />
+                <!--android:layout_centerHorizontal="true"-->
+
+                <Button
+                    android:id="@+id/add_6_to_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_5_to_a"
+                    android:layout_margin="2dp"
+                    android:layout_toEndOf="@id/center_a_6"
+                    android:onClick="addA"
+                    android:tag="6"
+                    android:text="+6"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/sub_8_from_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sub_6_from_a"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="2dp"
+                    android:onClick="subA"
+                    android:tag="8"
+                    android:text="-8"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/center_a_8"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_below="@id/center_a_6"
+                    android:layout_margin="0dp"
+                    android:layout_toEndOf="@id/sub_8_from_a"
+                    android:text=""
+                    android:textSize="0sp" />
+                <!--android:layout_centerHorizontal="true"-->
+
+                <Button
+                    android:id="@+id/add_8_to_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_6_to_a"
+                    android:layout_margin="2dp"
+                    android:layout_toEndOf="@id/center_a_8"
+                    android:onClick="addA"
+                    android:tag="8"
+                    android:text="+8"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+
+                <TextView
+                    android:id="@+id/team_b_score"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="2dp"
+                    android:layout_toStartOf="@id/sub_1_from_b"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="90dp"
+                    android:text="0"
+                    android:textColor="#0000FF"
+                    android:textSize="130sp" />
+
+
+                <Button
+                    android:id="@+id/sub_1_from_b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="2dp"
+                    android:layout_toStartOf="@id/center_b"
+                    android:onClick="subB"
+                    android:tag="1"
+                    android:text="-1"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/center_b"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="0dp"
+                    android:layout_toStartOf="@id/add_1_to_b"
+                    android:text=""
+                    android:textSize="0sp" />
+                <!--android:layout_centerHorizontal="true"-->
+
+                <Button
+                    android:id="@+id/add_1_to_b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="2dp"
+                    android:onClick="addB"
+                    android:tag="1"
+                    android:text="+1"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/sub_2_from_b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sub_1_from_b"
+                    android:layout_margin="2dp"
+                    android:layout_toStartOf="@id/center_b_2"
+                    android:onClick="subB"
+                    android:tag="2"
+                    android:text="-2"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/center_b_2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_below="@id/team_b_name"
+                    android:layout_margin="0dp"
+                    android:layout_toStartOf="@id/add_2_to_b"
+                    android:text=""
+                    android:textSize="0sp" />
+                <!--android:layout_centerHorizontal="true"-->
+
+                <Button
+                    android:id="@+id/add_2_to_b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_1_to_b"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="2dp"
+                    android:onClick="addB"
+                    android:tag="2"
+                    android:text="+2"
+                    android:textSize="14sp" />
+
+
+                <Button
+                    android:id="@+id/sub_3_from_b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sub_2_from_b"
+                    android:layout_margin="2dp"
+                    android:layout_toStartOf="@id/center_b_3"
+                    android:onClick="subB"
+                    android:tag="3"
+                    android:text="-3"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/center_b_3"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_below="@id/center_b_2"
+                    android:layout_margin="0dp"
+                    android:layout_toStartOf="@id/add_3_to_b"
+                    android:text=""
+                    android:textSize="0sp" />
+                <!--android:layout_centerHorizontal="true"-->
+
+                <Button
+                    android:id="@+id/add_3_to_b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_2_to_b"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="2dp"
+                    android:onClick="addB"
+                    android:tag="3"
+                    android:text="+3"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/sub_4_from_b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sub_3_from_b"
+                    android:layout_margin="2dp"
+                    android:layout_toStartOf="@id/center_b_2"
+                    android:onClick="subB"
+                    android:tag="4"
+                    android:text="-4"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/center_b_4"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_below="@id/center_b_3"
+                    android:layout_margin="0dp"
+                    android:layout_toStartOf="@id/add_4_to_b"
+                    android:text=""
+                    android:textSize="0sp" />
+                <!--android:layout_centerHorizontal="true"-->
+
+                <Button
+                    android:id="@+id/add_4_to_b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_3_to_b"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="2dp"
+                    android:onClick="addB"
+                    android:tag="4"
+                    android:text="+4"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/sub_5_from_b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sub_4_from_b"
+                    android:layout_margin="2dp"
+                    android:layout_toStartOf="@id/center_b_5"
+                    android:onClick="subB"
+                    android:tag="5"
+                    android:text="-5"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/center_b_5"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_below="@id/center_b_4"
+                    android:layout_margin="0dp"
+                    android:layout_toStartOf="@id/add_5_to_b"
+                    android:text=""
+                    android:textSize="0sp" />
+                <!--android:layout_centerHorizontal="true"-->
+
+                <Button
+                    android:id="@+id/add_5_to_b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_4_to_b"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="2dp"
+                    android:onClick="addB"
+                    android:tag="5"
+                    android:text="+5"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/sub_6_from_b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sub_5_from_b"
+                    android:layout_margin="2dp"
+                    android:layout_toStartOf="@id/center_b_6"
+                    android:onClick="subB"
+                    android:tag="6"
+                    android:text="-6"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/center_b_6"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_below="@id/center_b_5"
+                    android:layout_margin="0dp"
+                    android:layout_toStartOf="@id/add_6_to_b"
+                    android:text=""
+                    android:textSize="0sp" />
+                <!--android:layout_centerHorizontal="true"-->
+
+                <Button
+                    android:id="@+id/add_6_to_b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_5_to_b"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="2dp"
+                    android:onClick="addB"
+                    android:tag="6"
+                    android:text="+6"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/sub_8_from_b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sub_6_from_b"
+                    android:layout_margin="2dp"
+                    android:layout_toStartOf="@id/center_b_8"
+                    android:onClick="subB"
+                    android:tag="8"
+                    android:text="-8"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/center_b_8"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_below="@id/center_b_6"
+                    android:layout_margin="0dp"
+                    android:layout_toStartOf="@id/add_8_to_b"
+                    android:text=""
+                    android:textSize="0sp" />
+                <!--android:layout_centerHorizontal="true"-->
+
+                <Button
+                    android:id="@+id/add_8_to_b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_6_to_b"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="2dp"
+                    android:onClick="addB"
+                    android:tag="8"
+                    android:text="+8"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="resetScores"
+                android:text="@string/reset_button" />
+
+            <!--Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit Scores"
+                android:onClick="submitScores"
+                android:visibility="invisible"
+                /-->
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
