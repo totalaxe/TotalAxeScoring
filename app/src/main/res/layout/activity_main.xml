@@ -9,50 +9,19 @@
 
 
     <LinearLayout
+        android:id="@+id/problem"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/team_a_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="6dp"
-            android:layout_weight="1"
-            android:cursorVisible="false"
-            android:fontFamily="sans-serif"
-            android:gravity="center_horizontal"
-            android:maxLines="1"
-            android:text="@string/team_a"
-            android:textColor="#616161"
-            android:textSize="14sp" />
-
-        <EditText
-            android:id="@+id/team_b_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="6dp"
-            android:layout_weight="1"
-            android:cursorVisible="false"
-            android:fontFamily="sans-serif"
-            android:gravity="center_horizontal"
-            android:text="@string/team_b"
-            android:textColor="#616161"
-            android:textSize="14sp" />
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="0dp"
         android:baselineAligned="false"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_weight="1">
 
         <RelativeLayout
-            android:layout_width="0dp"
+            android:id="@+id/layout_a_buttons"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="0"
+            >
 
 
             <Button
@@ -65,7 +34,7 @@
                 android:onClick="addA"
                 android:tag="0"
                 android:text="0"
-                android:textSize="18sp" />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/add_1_to_a"
@@ -77,7 +46,7 @@
                 android:onClick="addA"
                 android:tag="1"
                 android:text="+1"
-                android:textSize="18sp" />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/add_2_to_a"
@@ -89,7 +58,7 @@
                 android:onClick="addA"
                 android:tag="2"
                 android:text="+2"
-                android:textSize="18sp" />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/add_3_to_a"
@@ -101,7 +70,7 @@
                 android:onClick="addA"
                 android:tag="3"
                 android:text="+3"
-                android:textSize="18sp" />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/add_4_to_a"
@@ -113,7 +82,7 @@
                 android:onClick="addA"
                 android:tag="4"
                 android:text="+4"
-                android:textSize="18sp" />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/add_5_to_a"
@@ -125,7 +94,7 @@
                 android:onClick="addA"
                 android:tag="5"
                 android:text="+5"
-                android:textSize="18sp" />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/add_6_to_a"
@@ -137,7 +106,7 @@
                 android:onClick="addA"
                 android:tag="6"
                 android:text="+6"
-                android:textSize="18sp" />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/add_8_to_a"
@@ -149,7 +118,7 @@
                 android:onClick="addA"
                 android:tag="8"
                 android:text="+8"
-                android:textSize="18sp" />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/undo_a"
@@ -160,65 +129,93 @@
                 android:layout_margin="6dp"
                 android:onClick="undoA"
                 android:text="Undo"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/layout_a_score"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            >
 
-            <TextView
-                android:id="@+id/team_a_score"
+            <EditText
+                android:id="@+id/player_one_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
                 android:layout_margin="6dp"
+                android:cursorVisible="false"
                 android:fontFamily="sans-serif"
-                android:gravity="center"
-                android:text="0"
-                android:textColor="#FF0000"
-                android:textSize="130sp" />
+                android:singleLine="true"
+                android:maxLines="1"
+                android:gravity="center_horizontal"
+                android:autoSizeTextType="uniform"
+                android:text="@string/player_one"
+                android:textColor="#616161"
+                android:textSize="36sp" />
 
             <TextView
-                android:id="@+id/team_a_games"
-                android:layout_width="wrap_content"
+                android:id="@+id/player_one_score"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_above="@id/team_a_total"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="6dp"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="6dp"
-                android:layout_marginBottom="6dp"
+                android:gravity="center"
+                android:layout_below="@id/player_one_name"
+                android:layout_margin="6dp"
+                android:fontFamily="sans-serif"
+                android:text="0"
+                android:textColor="#FF0000"
+                android:textSize="110sp" />
+
+            <TextView
+                android:id="@+id/player_one_games"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/player_one_total"
+                android:layout_margin="6dp"
                 android:fontFamily="sans-serif"
                 android:text=""
                 android:textSize="22sp" />
 
             <TextView
-                android:id="@+id/team_a_total"
+                android:id="@+id/player_one_total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="6dp"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="6dp"
-                android:layout_marginBottom="6dp"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="6dp"
                 android:fontFamily="sans-serif"
                 android:text=""
-                android:textSize="40sp" />
+                android:textColor="#FF0000"
+                android:textSize="50sp" />
+
+            <TextView
+                android:id="@+id/player_one_game_lead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/player_one_score"
+                android:layout_alignLeft="@id/player_one_score"
+                android:textSize="19sp"
+                android:text=""
+                android:textColor="#000000"/>
+
+            <TextView
+                android:id="@+id/player_one_series_lead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/player_one_game_lead"
+                android:layout_alignLeft="@id/player_one_score"
+                android:textSize="19sp"
+                android:text=""
+                android:textColor="#000000"/>
 
             <TextView
                 android:id="@+id/a_throws"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
+                android:layout_below="@id/player_one_name"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="6dp"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="6dp"
-                android:layout_marginBottom="6dp"
+                android:layout_margin="6dp"
                 android:fontFamily="sans-serif"
                 android:text=""
                 android:textSize="22sp" />
@@ -227,54 +224,84 @@
 
         <View
             android:layout_width="2dp"
-            android:layout_height="350dp"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:background="#000000" />
 
         <RelativeLayout
+            android:id="@+id/layout_b_score"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1">
 
-            <TextView
-                android:id="@+id/team_b_score"
+            <EditText
+                android:id="@+id/player_two_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
                 android:layout_margin="6dp"
+                android:cursorVisible="false"
                 android:fontFamily="sans-serif"
-                android:gravity="center"
-                android:text="0"
-                android:textColor="#0000FF"
-                android:textSize="130sp" />
+                android:singleLine="true"
+                android:maxLines="1"
+                android:gravity="center_horizontal"
+                android:text="@string/player_two"
+                android:textColor="#616161"
+                android:textSize="36sp" />
 
             <TextView
-                android:id="@+id/team_b_games"
+                android:id="@+id/player_two_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_below="@id/player_two_name"
+                android:layout_margin="6dp"
+                android:fontFamily="sans-serif"
+                android:text="0"
+                android:textColor="#0000FF"
+                android:textSize="110sp" />
+
+            <TextView
+                android:id="@+id/player_two_game_lead"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_above="@id/team_b_total"
+                android:layout_below="@id/player_two_score"
+                android:layout_alignLeft="@id/player_two_score"
+                android:textSize="19sp"
+                android:text=""
+                android:textColor="#000000"/>
+
+            <TextView
+                android:id="@+id/player_two_series_lead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/player_two_game_lead"
+                android:layout_alignLeft="@id/player_two_score"
+                android:textSize="19sp"
+                android:text=""
+                android:textColor="#000000"/>
+
+            <TextView
+                android:id="@+id/player_two_games"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/player_two_total"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="6dp"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="6dp"
-                android:layout_marginBottom="6dp"
+                android:layout_margin="6dp"
                 android:fontFamily="sans-serif"
                 android:text=""
                 android:textSize="22sp" />
 
             <TextView
-                android:id="@+id/team_b_total"
+                android:id="@+id/player_two_total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="6dp"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="6dp"
-                android:layout_marginBottom="6dp"
+                android:layout_margin="6dp"
                 android:fontFamily="sans-serif"
                 android:text=""
-                android:textSize="40sp" />
+                android:textColor="#0000FF"
+                android:textSize="50sp" />
 
 
             <TextView
@@ -282,11 +309,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="6dp"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="6dp"
-                android:layout_marginBottom="6dp"
+                android:layout_below="@id/player_two_name"
+                android:layout_margin="6dp"
                 android:fontFamily="sans-serif"
                 android:text=""
                 android:textSize="22sp" />
@@ -295,10 +319,10 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/problem_layout"
-            android:layout_width="0dp"
+            android:id="@+id/layout_b_buttons"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="0">
 
 
             <Button
@@ -306,96 +330,96 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_toStartOf="@id/add_1_to_b"
                 android:layout_margin="6dp"
+                android:layout_alignParentStart="true"
                 android:onClick="addB"
                 android:tag="0"
                 android:text="0"
-                android:textSize="18sp" />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/add_1_to_b"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@id/add_0_to_b"
                 android:layout_margin="6dp"
                 android:onClick="addB"
                 android:tag="1"
                 android:text="+1"
-                android:textSize="18sp" />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/add_2_to_b"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/add_0_to_b"
-                android:layout_toStartOf="@id/add_3_to_b"
                 android:layout_margin="6dp"
+                android:layout_below="@id/add_0_to_b"
+                android:layout_alignParentStart="true"
                 android:onClick="addB"
                 android:tag="2"
                 android:text="+2"
-                android:textSize="18sp" />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/add_3_to_b"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/add_1_to_b"
-                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@id/add_2_to_b"
                 android:layout_margin="6dp"
                 android:onClick="addB"
                 android:tag="3"
                 android:text="+3"
-                android:textSize="18sp" />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/add_4_to_b"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
                 android:layout_below="@id/add_2_to_b"
-                android:layout_toStartOf="@id/add_5_to_b"
                 android:layout_margin="6dp"
                 android:onClick="addB"
                 android:tag="4"
                 android:text="+4"
-                android:textSize="18sp" />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/add_5_to_b"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/add_2_to_b"
-                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@id/add_4_to_b"
                 android:layout_margin="6dp"
                 android:onClick="addB"
                 android:tag="5"
                 android:text="+5"
-                android:textSize="18sp" />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/add_6_to_b"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
                 android:layout_below="@id/add_4_to_b"
-                android:layout_toStartOf="@id/add_8_to_b"
                 android:layout_margin="6dp"
                 android:onClick="addB"
                 android:tag="6"
                 android:text="+6"
-                android:textSize="18sp" />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/add_8_to_b"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/add_4_to_b"
-                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@id/add_6_to_b"
                 android:layout_margin="6dp"
                 android:onClick="addB"
                 android:tag="8"
                 android:text="+8"
-                android:textSize="18sp" />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/undo_b"
@@ -406,44 +430,50 @@
                 android:layout_margin="6dp"
                 android:onClick="undoB"
                 android:text="Undo"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
         </RelativeLayout>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="top|center"
-        android:orientation="horizontal">
-
+        android:layout_weight="0"
+        android:gravity="center_horizontal">
 
         <Button
+            android:id="@+id/reset_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="resetScores"
             android:text="@string/reset_button" />
 
         <Button
+           android:id="@+id/next_game_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/reset_button"
             android:onClick="nextGame"
-            android:text="Next Game" />
+            android:text="@string/next_game_button" />
 
         <Button
+            android:id="@+id/switch_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/next_game_button"
             android:onClick="switchSides"
-            android:text="Switch Sides" />
+            android:text="@string/switch_sides_button" />
         
         <Button
+            android:id="@+id/next_match_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/switch_button"
             android:onClick="nextMatch"
-            android:text="Next Match"
+            android:text="@string/reset_match_button"
             />
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>
