@@ -1,8 +1,11 @@
 <resources>
     <string name="app_name">Total Axe Scoring</string>
-    <string name="team_a">Player 1</string>
-    <string name="team_b">Player 2</string>
-    <string name="team_a_score">0</string>
-    <string name="team_b_score">0</string>
+    <string name="player_one">Player 1</string>
+    <string name="player_two">Player 2</string>
+    <string name="player_one_score">0</string>
+    <string name="player_two_score">0</string>
     <string name="reset_button">Reset Game</string>
+    <string name="switch_sides_button">Reset Game</string>
+    <string name="next_game_button">Next Game</string>
+    <string name="reset_match_button">Reset Match</string>
 </resources>

@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText playerOneText = (EditText) findViewById(R.id.team_a_name);
-        EditText playerTwoText = (EditText) findViewById(R.id.team_b_name);
+        EditText playerOneText = (EditText) findViewById(R.id.player_one_name);
+        EditText playerTwoText = (EditText) findViewById(R.id.player_two_name);
 
 
         //String playerOne = getIntent().getStringExtra("playerOneName");
@@ -55,22 +55,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void displayForTeamA(int text) {
-        TextView t = (TextView) findViewById(R.id.team_a_score);
+        TextView t = (TextView) findViewById(R.id.player_one_score);
         t.setText("" + text);
         displayLead();
         matchResetFlag = 0;
     }
 
     public void displayForTeamB(int text) {
-        TextView t = (TextView) findViewById(R.id.team_b_score);
+        TextView t = (TextView) findViewById(R.id.player_two_score);
         t.setText("" + text);
         displayLead();
         matchResetFlag = 0;
     }
 
     public void displayLead(){
-        TextView ta = (TextView) findViewById(R.id.team_a_game_lead);
-        TextView tb = (TextView) findViewById(R.id.team_b_game_lead);
+        TextView ta = (TextView) findViewById(R.id.player_one_game_lead);
+        TextView tb = (TextView) findViewById(R.id.player_two_game_lead);
         int scoreDiff = scorePlayerOne - scorePlayerTwo;
         if (scoreDiff > 0){
             ta.setText(playerOne + " leads by " + scoreDiff);
@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
         for (Integer n : gamesA){
             games += n + "   ";
         }
-        TextView t = (TextView) findViewById(R.id.team_a_games);
+        TextView t = (TextView) findViewById(R.id.player_one_games);
         t.setText(games);
     }
 
@@ -155,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
         for (Integer n : gamesB){
             games += n + "   ";
         }
-        TextView t = (TextView) findViewById(R.id.team_b_games);
+        TextView t = (TextView) findViewById(R.id.player_two_games);
         t.setText(games);
     }
 
@@ -199,14 +199,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void switchSides(View view){
-        TextView playerAScore = (TextView) findViewById(R.id.team_a_score);
-        TextView playerBScore = (TextView) findViewById(R.id.team_b_score);
-        TextView playerATotal = (TextView) findViewById(R.id.team_a_total);
-        TextView playerBTotal = (TextView) findViewById(R.id.team_b_total);
-        EditText playerOneText = (EditText) findViewById(R.id.team_a_name);
-        EditText playerTwoText = (EditText) findViewById(R.id.team_b_name);
-        TextView totalA = (TextView) findViewById(R.id.team_a_total);
-        TextView totalB = (TextView) findViewById(R.id.team_b_total);
+        TextView playerAScore = (TextView) findViewById(R.id.player_one_score);
+        TextView playerBScore = (TextView) findViewById(R.id.player_two_score);
+        TextView playerATotal = (TextView) findViewById(R.id.player_one_total);
+        TextView playerBTotal = (TextView) findViewById(R.id.player_two_total);
+        EditText playerOneText = (EditText) findViewById(R.id.player_one_name);
+        EditText playerTwoText = (EditText) findViewById(R.id.player_two_name);
+        TextView totalA = (TextView) findViewById(R.id.player_one_total);
+        TextView totalB = (TextView) findViewById(R.id.player_two_total);
 
         LinkedList<Integer> tempList = new LinkedList<Integer>();
         tempList = (LinkedList) throwsA.clone();
@@ -277,16 +277,16 @@ public class MainActivity extends AppCompatActivity {
         for ( Integer n : gamesB ) {
             scoreB += n;
         }
-        TextView totalA = (TextView) findViewById(R.id.team_a_total);
-        TextView totalB = (TextView) findViewById(R.id.team_b_total);
+        TextView totalA = (TextView) findViewById(R.id.player_one_total);
+        TextView totalB = (TextView) findViewById(R.id.player_two_total);
 
         totalA.setText(Integer.toString(scoreA));
         totalB.setText(Integer.toString(scoreB));
     }
 
     public void nextMatch(View view) {
-        EditText playerOneText = (EditText) findViewById(R.id.team_a_name);
-        EditText playerTwoText = (EditText) findViewById(R.id.team_b_name);
+        EditText playerOneText = (EditText) findViewById(R.id.player_one_name);
+        EditText playerTwoText = (EditText) findViewById(R.id.player_two_name);
 
         playerOneWins = 0;
         playerOneLosses = 0;
