@@ -5,7 +5,7 @@
     <string name="player_one_score">0</string>
     <string name="player_two_score">0</string>
     <string name="reset_button">Reset Game</string>
-    <string name="switch_sides_button">Reset Game</string>
+    <string name="switch_sides_button">Switch Sides</string>
     <string name="next_game_button">Next Game</string>
     <string name="reset_match_button">Reset Match</string>
 </resources>

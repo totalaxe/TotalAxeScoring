@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -254,18 +255,37 @@ public class MainActivity extends AppCompatActivity {
     public void nextGame(View view){
         gamesA.add(scorePlayerOne);
         gamesB.add(scorePlayerTwo);
+        CheckBox checkBoxSwitch = (CheckBox) findViewById(R.id.checkbox_switch_sides);
+        TextView playerOneMatches = (TextView) findViewById(R.id.player_one_series_lead);
+        TextView playerTwoMatches = (TextView) findViewById(R.id.player_two_series_lead);
+
         if (scorePlayerOne > scorePlayerTwo){
             playerOneWins += 1;
-            playerTwoLosses += 1;
+            //playerTwoLosses += 1;
         } else if (scorePlayerOne < scorePlayerTwo){
-            playerOneLosses += 1;
+            //playerOneLosses += 1;
             playerTwoWins += 1;
         }else{
             playerOneTies += 1;
-            playerTwoTies += 1;
+            //playerTwoTies += 1;
         }
-        switchSides(view);
+        if(checkBoxSwitch.isChecked()) {
+            switchSides(view);
+        }
+        if (playerOneWins > playerTwoWins){
+            playerOneMatches.setText(playerOne + " leads series " + Integer.toString(playerOneWins) + "-" + Integer.toString(playerTwoWins) + "-" + Integer.toString(playerOneTies));
+            playerTwoMatches.setText(playerTwo + " trails series " + Integer.toString(playerTwoWins) + "-" + Integer.toString(playerOneWins) + "-" + Integer.toString(playerOneTies));
+        }else if (playerOneWins < playerTwoWins) {
+            playerOneMatches.setText(playerOne + " trails series " + Integer.toString(playerOneWins) + "-" + Integer.toString(playerTwoWins) + "-" + Integer.toString(playerOneTies));
+            playerTwoMatches.setText(playerTwo + " leads series " + Integer.toString(playerTwoWins) + "-" + Integer.toString(playerOneWins) + "-" + Integer.toString(playerOneTies));
+        }else{
+            playerOneMatches.setText("Series Tied " + Integer.toString(playerOneWins) + "-" + Integer.toString(playerTwoWins) + "-" + Integer.toString(playerOneTies));
+            playerTwoMatches.setText("Series Tied " + Integer.toString(playerTwoWins) + "-" + Integer.toString(playerOneWins) + "-" + Integer.toString(playerOneTies));
+        }
+        displayGamesA(view);
+        displayGamesB(view);
         resetScores(view);
+        displayMatchScores(view);
     }
 
     public void displayMatchScores(View view){
@@ -287,6 +307,9 @@ public class MainActivity extends AppCompatActivity {
     public void nextMatch(View view) {
         EditText playerOneText = (EditText) findViewById(R.id.player_one_name);
         EditText playerTwoText = (EditText) findViewById(R.id.player_two_name);
+        CheckBox checkBoxSwitch = (CheckBox) findViewById(R.id.checkbox_switch_sides);
+        TextView playerOneMatches = (TextView) findViewById(R.id.player_one_series_lead);
+        TextView playerTwoMatches = (TextView) findViewById(R.id.player_two_series_lead);
 
         playerOneWins = 0;
         playerOneLosses = 0;
@@ -311,6 +334,8 @@ public class MainActivity extends AppCompatActivity {
             switchSides(view);
             matchResetFlag = 0;
         }
+        playerOneMatches.setText("");
+        playerTwoMatches.setText("");
     }
 
 
